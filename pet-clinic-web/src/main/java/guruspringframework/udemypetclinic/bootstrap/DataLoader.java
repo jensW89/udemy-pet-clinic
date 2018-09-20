@@ -4,8 +4,7 @@ import guruspringframework.udemypetclinic.model.Owner;
 import guruspringframework.udemypetclinic.model.Vet;
 import guruspringframework.udemypetclinic.services.OwnerService;
 import guruspringframework.udemypetclinic.services.VetService;
-import guruspringframework.udemypetclinic.services.map.OwnerServiceMap;
-import guruspringframework.udemypetclinic.services.map.VetServiceMap;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -13,14 +12,15 @@ import org.springframework.stereotype.Component;
  * Created by jensW89
  */
 @Component
-public class dataLoader implements CommandLineRunner {
+public class DataLoader implements CommandLineRunner {
 
     private final OwnerService ownerService;
     private final VetService vetService;
 
-    public dataLoader() {
-        ownerService = new OwnerServiceMap();
-        vetService = new VetServiceMap();
+    public DataLoader(OwnerService ownerService, VetService vetService) {
+
+        this.ownerService = ownerService;
+        this.vetService = vetService;
     }
 
     @Override
