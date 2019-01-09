@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * Created by jensW89
  */
-public interface SpecialityService extends CrudRepository<Speciality, Long> {
+public interface SpecialityRepository extends CrudRepository<Speciality, Long> {
 }
