@@ -12,9 +12,9 @@ import java.util.Set;
  * Created by jensW89
  */
 @Service
-public class VetServiceMap extends AbstractMapService<Vet, Long> implements VetService {
+public class VetMapService extends AbstractMapService<Vet, Long> implements VetService {
 
-    public VetServiceMap(SpecialitiesService specialitiesService) {
+    public VetMapService(SpecialitiesService specialitiesService) {
         this.specialitiesService = specialitiesService;
     }
 
