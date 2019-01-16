@@ -1,6 +1,5 @@
 package guruspringframework.udemypetclinic.services.springdataJPA;
 
-import com.sun.xml.internal.ws.developer.Serialization;
 import guruspringframework.udemypetclinic.model.Pet;
 import guruspringframework.udemypetclinic.repositories.PetRepository;
 import guruspringframework.udemypetclinic.services.PetService;
