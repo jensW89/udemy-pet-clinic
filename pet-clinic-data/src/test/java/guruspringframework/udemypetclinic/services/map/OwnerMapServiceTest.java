@@ -20,7 +20,6 @@ class OwnerMapServiceTest {
     void setUp() {
         ownerMapService = new OwnerMapService(new PetTypeMapService(), new PetMapService());
 
-
         ownerMapService.save(Owner.builder().id(ownerId).lastName(lastName).build());
     }
 
@@ -32,18 +31,10 @@ class OwnerMapServiceTest {
     }
 
     @Test
-    void deleteById() {
+    void findById() {
+        Owner owner = ownerMapService.findById(ownerId);
 
-        ownerMapService.deleteById(ownerId);
-
-        assertEquals(0, ownerMapService.findAll().size());
-    }
-
-    @Test
-    void delete() {
-        ownerMapService.delete(ownerMapService.findById(ownerId));
-
-        assertEquals(0, ownerMapService.findAll().size());
+        assertEquals(ownerId, owner.getId());
     }
 
     @Test
@@ -55,35 +46,47 @@ class OwnerMapServiceTest {
         Owner savedOwner = ownerMapService.save(owner2);
 
         assertEquals(id, savedOwner.getId());
+
     }
 
     @Test
     void saveNoId() {
 
         Owner savedOwner = ownerMapService.save(Owner.builder().build());
+
         assertNotNull(savedOwner);
         assertNotNull(savedOwner.getId());
     }
 
     @Test
-    void findById() {
+    void delete() {
+        ownerMapService.delete(ownerMapService.findById(ownerId));
 
-        Owner owner = ownerMapService.findById(ownerId);
-        assertEquals(ownerId, owner.getId());
+        assertEquals(0, ownerMapService.findAll().size());
+    }
+
+    @Test
+    void deleteById() {
+        ownerMapService.deleteById(ownerId);
+
+        assertEquals(0, ownerMapService.findAll().size());
     }
 
     @Test
     void findByLastName() {
+        Owner smith = ownerMapService.findByLastName(lastName);
 
-        Owner owner = ownerMapService.findByLastName(lastName);
-        assertNotNull(owner);
-        assertEquals(ownerId, owner.getId());
+        assertNotNull(smith);
+
+        assertEquals(ownerId, smith.getId());
+
     }
 
     @Test
     void findByLastNameNotFound() {
+        Owner smith = ownerMapService.findByLastName("foo");
 
-        Owner owner = ownerMapService.findByLastName("foo");
-        assertNull(owner);
+        assertNull(smith);
     }
 }
+

@@ -8,8 +8,8 @@ import java.time.LocalDate;
 /**
  * Created by jensW89
  */
-@Getter
 @Setter
+@Getter
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder

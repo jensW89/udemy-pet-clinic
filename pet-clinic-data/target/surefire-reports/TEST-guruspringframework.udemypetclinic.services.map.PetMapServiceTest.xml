@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="guruspringframework.udemypetclinic.services.springdataJPA.OwnerSDJpaServiceTest" time="0.505" tests="7" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0.001" tests="14" errors="0" skipped="0" failures="0">
   <properties>
     <property name="sun.desktop" value="windows"/>
     <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
@@ -61,11 +61,18 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="52.0"/>
   </properties>
-  <testcase name="delete" classname="guruspringframework.udemypetclinic.services.springdataJPA.OwnerSDJpaServiceTest" time="0.493"/>
-  <testcase name="findAll" classname="guruspringframework.udemypetclinic.services.springdataJPA.OwnerSDJpaServiceTest" time="0.003"/>
-  <testcase name="findById" classname="guruspringframework.udemypetclinic.services.springdataJPA.OwnerSDJpaServiceTest" time="0.002"/>
-  <testcase name="save" classname="guruspringframework.udemypetclinic.services.springdataJPA.OwnerSDJpaServiceTest" time="0.001"/>
-  <testcase name="findByLastName" classname="guruspringframework.udemypetclinic.services.springdataJPA.OwnerSDJpaServiceTest" time="0.001"/>
-  <testcase name="findByIdNotFound" classname="guruspringframework.udemypetclinic.services.springdataJPA.OwnerSDJpaServiceTest" time="0.001"/>
-  <testcase name="deleteById" classname="guruspringframework.udemypetclinic.services.springdataJPA.OwnerSDJpaServiceTest" time="0"/>
+  <testcase name="saveNoId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="deleteWithWrongId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="saveExistingId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="findAll" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="deletePet" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="deleteByIdCorrectId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0.001"/>
+  <testcase name="deleteByIdNullId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="deleteByIdWrongId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="deleteWithNullId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="findByIdNullId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="saveDuplicateId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="findByIdExistingId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="deleteNull" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
+  <testcase name="findByIdNotExistingId" classname="guruspringframework.udemypetclinic.services.map.PetMapServiceTest" time="0"/>
 </testsuite>

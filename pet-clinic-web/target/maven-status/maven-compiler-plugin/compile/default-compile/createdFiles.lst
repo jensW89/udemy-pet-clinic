@@ -1,5 +1,9 @@
 guruspringframework\udemypetclinic\controllers\indexController.class
+guruspringframework\udemypetclinic\controllers\VisitController.class
 guruspringframework\udemypetclinic\bootstrap\DataLoader.class
 guruspringframework\udemypetclinic\controllers\VetController.class
+guruspringframework\udemypetclinic\formatters\PetTypeFormatter.class
+guruspringframework\udemypetclinic\controllers\PetController.class
+guruspringframework\udemypetclinic\controllers\VisitController$1.class
 guruspringframework\udemypetclinic\controllers\OwnerController.class
 guruspringframework\udemypetclinic\UdemyPetClinicApplication.class

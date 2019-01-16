@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
 import java.time.LocalDate;
 
 /**
- * Created by jensW89
+ * Created by jt on 7/25/18.
  */
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -19,12 +19,12 @@ public class DataLoader implements CommandLineRunner {
     private final SpecialitiesService specialitiesService;
     private final VisitService visitService;
 
-
-    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService, SpecialitiesService specialitiesService, VisitService visitService) {
+    public DataLoader(OwnerService ownerService, VetService vetService, PetTypeService petTypeService,
+                      SpecialitiesService specialityService, VisitService visitService) {
         this.ownerService = ownerService;
         this.vetService = vetService;
         this.petTypeService = petTypeService;
-        this.specialitiesService = specialitiesService;
+        this.specialitiesService = specialityService;
         this.visitService = visitService;
     }
 
@@ -33,7 +33,7 @@ public class DataLoader implements CommandLineRunner {
 
         int count = petTypeService.findAll().size();
 
-        if(count == 0){
+        if (count == 0 ){
             loadData();
         }
     }
@@ -44,8 +44,8 @@ public class DataLoader implements CommandLineRunner {
         PetType savedDogPetType = petTypeService.save(dog);
 
         PetType cat = new PetType();
-        dog.setName("Cat");
-        PetType savedcatPetType = petTypeService.save(cat);
+        cat.setName("Cat");
+        PetType savedCatPetType = petTypeService.save(cat);
 
         Speciality radiology = new Speciality();
         radiology.setDescription("Radiology");
@@ -56,7 +56,7 @@ public class DataLoader implements CommandLineRunner {
         Speciality savedSurgery = specialitiesService.save(surgery);
 
         Speciality dentistry = new Speciality();
-        dentistry.setDescription("Dentistry");
+        dentistry.setDescription("dentistry");
         Speciality savedDentistry = specialitiesService.save(dentistry);
 
         Owner owner1 = new Owner();
@@ -64,7 +64,7 @@ public class DataLoader implements CommandLineRunner {
         owner1.setLastName("Weston");
         owner1.setAddress("123 Brickerel");
         owner1.setCity("Miami");
-        owner1.setTelephone("123456789");
+        owner1.setTelephone("1231231234");
 
         Pet mikesPet = new Pet();
         mikesPet.setPetType(savedDogPetType);
@@ -80,13 +80,13 @@ public class DataLoader implements CommandLineRunner {
         owner2.setLastName("Glenanne");
         owner2.setAddress("123 Brickerel");
         owner2.setCity("Miami");
-        owner2.setTelephone("123456789");
+        owner2.setTelephone("1231231234");
 
         Pet fionasCat = new Pet();
-        fionasCat.setName("JustCat");
+        fionasCat.setName("Just Cat");
         fionasCat.setOwner(owner2);
         fionasCat.setBirthDate(LocalDate.now());
-        fionasCat.setPetType(savedcatPetType);
+        fionasCat.setPetType(savedCatPetType);
         owner2.getPets().add(fionasCat);
 
         ownerService.save(owner2);
@@ -95,9 +95,10 @@ public class DataLoader implements CommandLineRunner {
         catVisit.setPet(fionasCat);
         catVisit.setDate(LocalDate.now());
         catVisit.setDescription("Sneezy Kitty");
+
         visitService.save(catVisit);
 
-        System.out.println("Loaded owners...");
+        System.out.println("Loaded Owners....");
 
         Vet vet1 = new Vet();
         vet1.setFirstName("Sam");
@@ -113,6 +114,6 @@ public class DataLoader implements CommandLineRunner {
 
         vetService.save(vet2);
 
-        System.out.println("Loaded vets...");
+        System.out.println("Loaded Vets....");
     }
 }

@@ -1,2 +1,3 @@
 guruspringframework\udemypetclinic\services\springdataJPA\OwnerSDJpaServiceTest.class
 guruspringframework\udemypetclinic\services\map\OwnerMapServiceTest.class
+guruspringframework\udemypetclinic\services\map\PetMapServiceTest.class

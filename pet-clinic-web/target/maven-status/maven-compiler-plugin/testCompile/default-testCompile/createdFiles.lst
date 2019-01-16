@@ -1,2 +1,4 @@
 guruspringframework\udemypetclinic\controllers\OwnerControllerTest.class
+guruspringframework\udemypetclinic\controllers\PetControllerTest.class
 guruspringframework\udemypetclinic\UdemyPetClinicApplicationTests.class
+guruspringframework\udemypetclinic\controllers\VisitControllerTest.class

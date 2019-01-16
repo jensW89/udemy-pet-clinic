@@ -10,7 +10,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 /**
- * Created by jensW89
+ * Created by jt on 8/5/18.
  */
 @Service
 @Profile("springdatajpa")
@@ -24,7 +24,6 @@ public class PetSDJpaService implements PetService {
 
     @Override
     public Set<Pet> findAll() {
-
         Set<Pet> pets = new HashSet<>();
         petRepository.findAll().forEach(pets::add);
         return pets;
