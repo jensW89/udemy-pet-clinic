@@ -9,13 +9,12 @@ import guruspringframework.udemypetclinic.services.OwnerService;
 import org.springframework.context.annotation.Profile;
 import org.springframework.stereotype.Service;
 
-import javax.swing.text.html.Option;
 import java.util.HashSet;
-import java.util.Optional;
+import java.util.List;
 import java.util.Set;
 
 /**
- * Created by jensW89
+ * Created by jt on 8/5/18.
  */
 @Service
 @Profile("springdatajpa")
@@ -38,18 +37,19 @@ public class OwnerSDJpaService implements OwnerService {
     }
 
     @Override
+    public List<Owner> findAllByLastNameLike(String lastName) {
+        return ownerRepository.findAllByLastNameLike(lastName);
+    }
+
+    @Override
     public Set<Owner> findAll() {
-
         Set<Owner> owners = new HashSet<>();
-
         ownerRepository.findAll().forEach(owners::add);
-
         return owners;
     }
 
     @Override
     public Owner findById(Long aLong) {
-
         return ownerRepository.findById(aLong).orElse(null);
     }
 
@@ -60,7 +60,6 @@ public class OwnerSDJpaService implements OwnerService {
 
     @Override
     public void delete(Owner object) {
-
         ownerRepository.delete(object);
     }
 
