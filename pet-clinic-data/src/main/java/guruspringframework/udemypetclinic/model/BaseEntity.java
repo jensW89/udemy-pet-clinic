@@ -1,6 +1,5 @@
 package guruspringframework.udemypetclinic.model;
 
-import com.sun.javafx.beans.IDProperty;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
